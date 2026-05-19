@@ -137,11 +137,24 @@ document.getElementById('export-btn').addEventListener('click', function() {
     alert('No entries to export yet.');
     return;
   }
-  var blob = new Blob([JSON.stringify(journal, null, 2)], { type: 'application/json' });
+  var lines = ['AUTHENTIC LIVING — REFLECTION JOURNAL', ''];
+  journal.forEach(function(e) {
+    var dateStr = new Date(e.date + 'T12:00:00').toLocaleDateString('en-GB', {
+      weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+    });
+    var rating = (e.rating !== null && e.rating !== undefined) ? RATING_LABELS[e.rating] : 'Not rated';
+    lines.push('── ' + dateStr + ' ──');
+    lines.push('Pattern:    ' + e.other);
+    lines.push('Moving to:  ' + e.auth);
+    lines.push('Rating:     ' + rating);
+    if (e.note) lines.push('Note:       ' + e.note);
+    lines.push('');
+  });
+  var blob = new Blob([lines.join('\n')], { type: 'text/plain' });
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
   a.href = url;
-  a.download = 'authentic-living-journal.json';
+  a.download = 'authentic-living-journal.txt';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
