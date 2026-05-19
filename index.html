@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Authentic Living">
+  <meta name="theme-color" content="#1a1a18">
+  <title>Authentic Living</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-title">
+          <span class="header-sup">Jim Warner</span>
+          <h1>Authentic Living</h1>
+        </div>
+        <nav class="header-nav">
+          <button class="nav-btn active" id="nav-today" aria-label="Today">Today</button>
+          <button class="nav-btn" id="nav-journal" aria-label="Journal">Journal</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- TODAY VIEW -->
+    <main id="view-today" class="view active">
+
+      <div class="date-line" id="date-display"></div>
+
+      <!-- Challenge card -->
+      <div class="challenge-card">
+        <div class="card-section card-other">
+          <p class="card-eyebrow">Notice this in yourself</p>
+          <h2 class="card-title" id="other-title"></h2>
+          <p class="card-body" id="other-desc"></p>
+        </div>
+        <div class="card-arrow">
+          <div class="arrow-line"></div>
+          <span class="arrow-label">move towards</span>
+          <div class="arrow-line"></div>
+        </div>
+        <div class="card-section card-auth">
+          <p class="card-eyebrow">Authentic alternative</p>
+          <h2 class="card-title auth-title" id="auth-title"></h2>
+          <p class="card-body" id="auth-desc"></p>
+        </div>
+      </div>
+
+      <!-- Reflection -->
+      <div class="reflect-block">
+        <p class="reflect-question" id="reflect-q"></p>
+
+        <div class="rating-group" id="rating-group">
+          <button class="rating-btn" id="btn0" data-val="0">
+            <span class="rating-dot dot-red"></span>
+            Struggling with this
+          </button>
+          <button class="rating-btn" id="btn1" data-val="1">
+            <span class="rating-dot dot-amber"></span>
+            Somewhere in between
+          </button>
+          <button class="rating-btn" id="btn2" data-val="2">
+            <span class="rating-dot dot-green"></span>
+            Living this well
+          </button>
+        </div>
+
+        <textarea id="note" placeholder="Thoughts, observations, or intentions for today…" rows="4"></textarea>
+
+        <button class="save-btn" id="save-btn">Save reflection</button>
+        <p class="saved-msg" id="saved-msg"></p>
+      </div>
+
+      <p class="source-credit">From Jim Warner's Contrasting Behaviours table<br><em>Facing Pain — Embracing Love</em>, OnCourse International</p>
+
+    </main>
+
+    <!-- JOURNAL VIEW -->
+    <main id="view-journal" class="view">
+
+      <div class="journal-header-row">
+        <h2 class="journal-heading">Your reflections</h2>
+        <button class="export-btn" id="export-btn">Export journal</button>
+      </div>
+
+      <div id="journal-list"></div>
+
+    </main>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
