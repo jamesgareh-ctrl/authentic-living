@@ -1,11 +1,11 @@
 var CACHE = 'authentic-living-v1';
 var ASSETS = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/data.js',
-  '/js/app.js',
-  '/manifest.json',
+  '/authentic-living/',
+  '/authentic-living/index.html',
+  '/authentic-living/css/style.css',
+  '/authentic-living/js/data.js',
+  '/authentic-living/js/app.js',
+  '/authentic-living/manifest.json',
   'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap'
 ];
 
