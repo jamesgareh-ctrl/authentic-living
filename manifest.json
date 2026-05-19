@@ -2,7 +2,7 @@
   "name": "Authentic Living",
   "short_name": "Authentic",
   "description": "Daily reflection challenges based on Jim Warner's Contrasting Behaviours",
-  "start_url": "/",
+  "start_url": "/authentic-living/",
   "display": "standalone",
   "background_color": "#1a1a18",
   "theme_color": "#1a1a18",
